@@ -5,24 +5,25 @@
 int main() {
     setlocale(LC_ALL, "portuguese");
 
-    float media, nota, numerodenotas = 0;
-    int somanotas = 0;
-    int i;
-    
+    int Nnotas, i;
+    float nota, soma = 0, media;
 
-        printf("Por favor digite as suas notas: \n");
-        scanf("%d", &numerodenotas);
+    printf("Por favor informe a quantidade de notas:");
+    scanf("%d", &Nnotas);
 
-        for (i = 1; i <= numerodenotas; i++) {
-            printf("Digite a %d nota: \n", i);
-            scanf("%f", &nota);
+    for (i = 0; i < Nnotas; i++) {
+        printf("Digite a sua nota %d: ", i + 1);
+        scanf("%f", &nota);
+        soma += nota;
+    }
 
-            somanotas+=nota;
-        }
-    
-    media = somanotas / numerodenotas;
-
-    printf("Media: %.2f \n", media);
+    if (quantidadenotas != 0) {
+        media = soma / Nnotas;
+        printf("Sua média: %.2f\n", media);
+    } else {
+        printf("Insira uma nota...\n");
+    }
 
     return 0;
 }
+
